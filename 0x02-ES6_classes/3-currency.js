@@ -1,31 +1,43 @@
-class Currency {
+
+/* eslint-disable no-underscore-dangle */
+export default class Currency {
+    /**
+     * @param {string} code - currency code
+     * @param {string} name - currency name
+     *
+     * Implement getters and setters for each
+     */
     constructor(code, name) {
       this.code = code;
       this.name = name;
-    }
-  
-   
-    set code(code) {
-      if (typeof code !== 'string') {
-        throw new TypeError('Code must be a String');
-      }
-      this._code = code;
     }
   
     get code() {
       return this._code;
     }
   
-    
-    set name(name) {
-      if (typeof name !== 'string') {
-        throw new TypeError('Name must be a String');
+  /**
+   * @param {String} code
+   */
+    set code(value) {
+      if (typeof value !== 'string') {
+        throw new Error('code must be a string');
       }
-      this._name = name;
+      this._code = value;
     }
   
     get name() {
       return this._name;
+    }
+
+  /**
+   * @param {String} name
+   */    
+    set name(value) {
+      if (typeof value !== 'string') {
+        throw new Error('name must be a string');
+      }
+      this._name = value;
     }
   
     displayFullCurrency() {
@@ -33,4 +45,3 @@ class Currency {
     }
   }
   
-  export default Currency;
